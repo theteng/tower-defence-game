@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkdks0sa57g1s"]
+
+[ext_resource type="PackedScene" uid="uid://bpq2pr4a0pw27" path="res://enemy.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://b5a8vffmkwpom" path="res://path_follow_2d.gd" id="1_e2o6t"]
+[ext_resource type="Script" uid="uid://c3p23falr6iqt" path="res://wave_spawner.gd" id="1_feb5d"]
+[ext_resource type="PackedScene" uid="uid://bqlgoi3aa4bnx" path="res://enemy_follower.tscn" id="3_fc0e3"]
+
+[sub_resource type="Curve2D" id="Curve2D_e2o6t"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -136, -99, 0, 0, 0, 0, 1867, 763, 0, 0, 0, 0, 4043, 924)
+}
+point_count = 3
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_feb5d")
+enemy_scene = ExtResource("1_80nbo")
+follower_scene = ExtResource("3_fc0e3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2000, 500)
+zoom = Vector2(0.3, 0.3)
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(352.9177, 0)
+scale = Vector2(0.8229242, 1)
+curve = SubResource("Curve2D_e2o6t")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-136, -99)
+rotation = 0.4063972
+loop = false
+script = ExtResource("1_e2o6t")
+
+[node name="Enemy" parent="Path2D/PathFollow2D" instance=ExtResource("1_80nbo")]
