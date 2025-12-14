@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" role="img" aria-label="Alien enemy ship top-down facing right">
+	<defs>
+		<linearGradient id="alienHull" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0" stop-color="#3A1E4D"></stop>
+			<stop offset="0.55" stop-color="#24112F"></stop>
+			<stop offset="1" stop-color="#12081A"></stop>
+		</linearGradient>
+
+		<linearGradient id="alienDark" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0" stop-color="#1A0D24"></stop>
+			<stop offset="1" stop-color="#09040F"></stop>
+		</linearGradient>
+
+		<radialGradient id="bioGlow" cx="50%" cy="50%" r="60%">
+			<stop offset="0" stop-color="#7CFFD6" stop-opacity="0.9"></stop>
+			<stop offset="0.45" stop-color="#35E6A8" stop-opacity="0.6"></stop>
+			<stop offset="1" stop-color="#0B2B22" stop-opacity="0"></stop>
+		</radialGradient>
+
+		<filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+			<feGaussianBlur stdDeviation="3"></feGaussianBlur>
+		</filter>
+
+		<filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+			<feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.35"></feDropShadow>
+		</filter>
+	</defs>
+
+	<!-- Alien ship -->
+	<g filter="url(#shadow)">
+		<!-- Main hull -->
+		<path d="M64 128
+		         C96 102, 152 86, 224 86
+		         L360 86
+		         C404 86, 438 112, 456 128
+		         C438 144, 404 170, 360 170
+		         L224 170
+		         C152 170, 96 154, 64 128 Z" fill="url(#alienHull)"></path>
+
+		<!-- Inner body -->
+		<path d="M92 128
+		         C118 110, 162 98, 224 98
+		         L352 98
+		         C382 98, 406 116, 418 128
+		         C406 140, 382 158, 352 158
+		         L224 158
+		         C162 158, 118 146, 92 128 Z" fill="url(#alienDark)" opacity="0.95"></path>
+
+		<!-- Organic nose -->
+		<path d="M456 128
+		         C480 114, 506 120, 512 128
+		         C506 136, 480 142, 456 128 Z" fill="#4B2A63"></path>
+
+		<!-- Bio spine -->
+		<rect x="168" y="114" width="152" height="28" rx="14" fill="#140A1D"></rect>
+		<rect x="176" y="120" width="136" height="16" rx="8" fill="url(#bioGlow)" filter="url(#softGlow)" opacity="0.9"></rect>
+
+		<!-- Central eye / sensor -->
+		<circle cx="264" cy="128" r="16" fill="#05080B"></circle>
+		<circle cx="264" cy="128" r="10" fill="#35E6A8" opacity="0.45" filter="url(#softGlow)"></circle>
+
+		<!-- Organic fins -->
+		<path d="M176 94
+		         C200 86, 224 86, 244 94
+		         L216 104 Z" fill="#1E0F2A"></path>
+		<path d="M176 162
+		         C200 170, 224 170, 244 162
+		         L216 152 Z" fill="#1E0F2A"></path>
+
+		<!-- Engine sac -->
+		<path d="M72 104
+		         C56 110, 56 146, 72 152
+		         L120 152
+		         C132 146, 132 110, 120 104 Z" fill="#0A0F14"></path>
+
+		<!-- Bioluminescent engines -->
+		<circle cx="88" cy="128" r="10" fill="url(#bioGlow)" filter="url(#softGlow)"></circle>
+		<circle cx="106" cy="128" r="13" fill="url(#bioGlow)" filter="url(#softGlow)"></circle>
+		<circle cx="124" cy="128" r="10" fill="url(#bioGlow)" filter="url(#softGlow)"></circle>
+
+		<!-- Vein lines -->
+		<g stroke="#35E6A8" stroke-width="3" stroke-linecap="round" opacity="0.35">
+			<path d="M200 112 H240"></path>
+			<path d="M200 144 H240"></path>
+			<path d="M292 112 H328"></path>
+			<path d="M292 144 H328"></path>
+		</g>
+	</g>
+</svg>
