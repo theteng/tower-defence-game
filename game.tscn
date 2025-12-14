@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkdks0sa57g1s"]
+[gd_scene load_steps=7 format=3 uid="uid://dkdks0sa57g1s"]
 
 [ext_resource type="PackedScene" uid="uid://bpq2pr4a0pw27" path="res://enemy.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://b5a8vffmkwpom" path="res://path_follow_2d.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://c3p23falr6iqt" path="res://wave_spawner.gd" id="1_feb5d"]
 [ext_resource type="PackedScene" uid="uid://bqlgoi3aa4bnx" path="res://enemy_follower.tscn" id="3_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://cosm46b0e8n3t" path="res://tower.tscn" id="5_7jktm"]
 
 [sub_resource type="Curve2D" id="Curve2D_e2o6t"]
 _data = {
@@ -15,6 +16,7 @@ point_count = 3
 script = ExtResource("1_feb5d")
 enemy_scene = ExtResource("1_80nbo")
 follower_scene = ExtResource("3_fc0e3")
+tower_scene = ExtResource("5_7jktm")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(2000, 500)
@@ -32,3 +34,4 @@ loop = false
 script = ExtResource("1_e2o6t")
 
 [node name="Enemy" parent="Path2D/PathFollow2D" instance=ExtResource("1_80nbo")]
+max_hp = 10
