@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var fire_rate := 0.1 # seconds between shots
+@export var fire_rate := 0.4 # seconds between shots
 @export var damage := 1
 @export var show_range := true
 
@@ -16,6 +16,8 @@ func _process(delta):
 	var target :Node = _get_target()
 	if target == null:
 		return
+
+	queue_redraw();
 
 	target.take_damage(damage)
 	_cooldown = fire_rate

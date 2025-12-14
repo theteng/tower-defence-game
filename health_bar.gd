@@ -1,26 +1,28 @@
 extends Node2D
+class_name HealthBar2D
 
-@export var max_hp := 5
-var hp := 5
+@export var max_value := 10
+@export var width := 400.0
+@export var height := 20.0
+@export var y_offset := -50.0
 
-func set_hp(value: int) -> void:
-	hp = value
+@export var background_color: Color = Color(0, 0, 0, 0.75)
+@export var fill_color: Color = Color(0.2, 1.0, 0.2, 0.9)
+
+var value := 10
+
+func set_value(v: int) -> void:
+	value = clamp(v, 0, max_value)
+	queue_redraw()
+
+func set_max(v: int) -> void:
+	max_value = max(v, 1)
+	value = clamp(value, 0, max_value)
 	queue_redraw()
 
 func _draw() -> void:
-	var w := 500.0
-	var h := 35.0
-	var offset := Vector2(-w * 0.5, -160.0)
+	var offset := Vector2(-width * 0.5, y_offset)
+	draw_rect(Rect2(offset, Vector2(width, height)), background_color)
 
-	# background
-	draw_rect(Rect2(offset, Vector2(w, h)), Color(0, 0, 0, 0.75))
-
-	# fill
-	var ratio :float= clamp(float(hp) / float(max_hp), 0.0, 1.0)
-	draw_rect(Rect2(offset, Vector2(w * ratio, h)), Color(0.2, 1.0, 0.2, 0.9))
-
-func _ready() -> void:
-	# Counter enemy visual scale so the bar stays readable
-	var parent_scale :Vector2= get_parent().scale
-	if parent_scale.x != 0:
-		scale = Vector2.ONE / parent_scale
+	var ratio :float= clamp(float(value) / float(max_value), 0.0, 1.0)
+	draw_rect(Rect2(offset, Vector2(width * ratio, height)), fill_color)
