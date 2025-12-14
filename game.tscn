@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bpq2pr4a0pw27" path="res://enemy.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://b5a8vffmkwpom" path="res://path_follow_2d.gd" id="1_e2o6t"]
-[ext_resource type="Script" uid="uid://c3p23falr6iqt" path="res://wave_spawner.gd" id="1_feb5d"]
+[ext_resource type="Script" uid="uid://c3p23falr6iqt" path="res://game.gd" id="1_feb5d"]
 [ext_resource type="PackedScene" uid="uid://bqlgoi3aa4bnx" path="res://enemy_follower.tscn" id="3_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://cosm46b0e8n3t" path="res://tower.tscn" id="5_7jktm"]
 
