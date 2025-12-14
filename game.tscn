@@ -22,6 +22,28 @@ tower_scene = ExtResource("5_7jktm")
 position = Vector2(2000, 500)
 zoom = Vector2(0.3, 0.3)
 
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="BackgroundUI" type="Control" parent="BackgroundLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Starfield" type="ColorRect" parent="BackgroundLayer/BackgroundUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.004899827, 0.004899827, 0.004899827, 1)
+
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(352.9177, 0)
 scale = Vector2(0.8229242, 1)
