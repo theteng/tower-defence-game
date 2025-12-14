@@ -1,98 +1,74 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Basic sci-fi single-target tower (top-fire)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Orbital defence satellite tower (thick variant)">
 	<defs>
-		<linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
-			<stop offset="0" stop-color="#EAF1FB"></stop>
-			<stop offset="0.55" stop-color="#B9C6D8"></stop>
-			<stop offset="1" stop-color="#7F8EA5"></stop>
+		<linearGradient id="satBody" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0" stop-color="#EDF3FC"></stop>
+			<stop offset="0.6" stop-color="#BFCBDD"></stop>
+			<stop offset="1" stop-color="#8897AE"></stop>
 		</linearGradient>
 
-		<linearGradient id="dark" x1="0" y1="0" x2="0" y2="1">
-			<stop offset="0" stop-color="#2F3948"></stop>
-			<stop offset="1" stop-color="#141A23"></stop>
+		<linearGradient id="satDark" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0" stop-color="#2E3847"></stop>
+			<stop offset="1" stop-color="#151B25"></stop>
 		</linearGradient>
 
-		<radialGradient id="glow" cx="50%" cy="50%" r="60%">
-			<stop offset="0" stop-color="#A7FBFF" stop-opacity="0.9"></stop>
-			<stop offset="0.45" stop-color="#22D8FF" stop-opacity="0.6"></stop>
-			<stop offset="1" stop-color="#0B2B3A" stop-opacity="0"></stop>
-		</radialGradient>
+		<linearGradient id="energy" x1="0" y1="0" x2="1" y2="0">
+			<stop offset="0" stop-color="#2EEBFF"></stop>
+			<stop offset="1" stop-color="#8CFFF2"></stop>
+		</linearGradient>
 
 		<filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-			<feGaussianBlur stdDeviation="3"></feGaussianBlur>
+			<feGaussianBlur stdDeviation="4"></feGaussianBlur>
 		</filter>
 
 		<filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
-			<feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity="0.35"></feDropShadow>
+			<feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.35"></feDropShadow>
 		</filter>
 	</defs>
 
-	<!-- Ground shadow -->
-	<ellipse cx="256" cy="456" rx="176" ry="28" fill="#0A0F16" opacity="0.55"></ellipse>
-
-	<!-- Base -->
 	<g filter="url(#shadow)">
-		<path d="M96 404
-		         C132 372, 192 354, 256 354
-		         C320 354, 380 372, 416 404
-		         L416 440
-		         C380 468, 320 484, 256 484
-		         C192 484, 132 468, 96 440 Z" fill="url(#dark)"></path>
-		<path d="M124 410
-		         C156 388, 206 374, 256 374
-		         C306 374, 356 388, 388 410
-		         L388 426
-		         C356 448, 306 460, 256 460
-		         C206 460, 156 448, 124 426 Z" fill="url(#body)" opacity="0.92"></path>
-	</g>
+		<!-- Central mass (larger + thicker) -->
+		<circle cx="256" cy="256" r="96" fill="url(#satBody)"></circle>
+		<circle cx="256" cy="256" r="72" fill="url(#satDark)"></circle>
 
-	<!-- Main column -->
-	<g filter="url(#shadow)">
-		<path d="M206 370
-		         C214 324, 220 278, 224 230
-		         C226 200, 242 182, 256 182
-		         C270 182, 286 200, 288 230
-		         C292 278, 298 324, 306 370
-		         C310 392, 292 408, 256 408
-		         C220 408, 202 392, 206 370 Z" fill="url(#body)"></path>
+		<!-- Weapon emitter -->
+		<circle cx="256" cy="256" r="20" fill="#061018"></circle>
+		<circle cx="256" cy="256" r="12" fill="url(#energy)" opacity="0.65" filter="url(#softGlow)"></circle>
 
-		<!-- Energy spine -->
-		<rect x="248" y="240" width="16" height="124" rx="8" fill="#0A121B"></rect>
-		<rect x="250" y="246" width="12" height="112" rx="6" fill="#22D8FF" opacity="0.6" filter="url(#softGlow)"></rect>
-	</g>
+		<!-- Reinforced outer ring -->
+		<circle cx="256" cy="256" r="124" fill="none" stroke="#3A465A" stroke-width="18" opacity="0.6"></circle>
 
-	<!-- Core chamber -->
-	<g filter="url(#shadow)">
-		<path d="M256 94 L332 140 L332 220 L256 266 L180 220 L180 140 Z" fill="url(#dark)"></path>
-		<path d="M256 108 L320 144 L320 216 L256 252 L192 216 L192 144 Z" fill="url(#body)" opacity="0.94"></path>
+		<!-- Antenna mast (shorter + thicker) -->
+		<rect x="240" y="104" width="32" height="64" rx="14" fill="#243042"></rect>
+		<circle cx="256" cy="92" r="16" fill="#243042"></circle>
+		<circle cx="256" cy="92" r="8" fill="#2EEBFF" opacity="0.55" filter="url(#softGlow)"></circle>
 
-		<circle cx="256" cy="180" r="64" fill="url(#glow)" filter="url(#softGlow)"></circle>
-		<circle cx="256" cy="180" r="42" fill="#0A151F" opacity="0.9"></circle>
-	</g>
+		<!-- Heavy solar arms -->
+		<rect x="48" y="216" width="160" height="80" rx="18" fill="#1B2432"></rect>
+		<rect x="304" y="216" width="160" height="80" rx="18" fill="#1B2432"></rect>
 
-	<!-- Top firing emitter -->
-	<g filter="url(#shadow)">
-		<!-- Emitter housing -->
-		<circle cx="256" cy="116" r="42" fill="url(#body)"></circle>
-		<circle cx="256" cy="116" r="30" fill="#243042"></circle>
+		<!-- Solar panel segmentation -->
+		<g stroke="#44546E" stroke-width="4" opacity="0.65">
+			<path d="M64 240 H192"></path>
+			<path d="M64 264 H192"></path>
+			<path d="M64 288 H192"></path>
 
-		<!-- Firing aperture -->
-		<circle cx="256" cy="116" r="12" fill="#061018"></circle>
-		<circle cx="256" cy="116" r="7" fill="#22D8FF" opacity="0.35" filter="url(#softGlow)"></circle>
-
-		<!-- Subtle top markings -->
-		<g stroke="#6C7B94" stroke-width="4" stroke-linecap="round" opacity="0.6">
-			<path d="M256 86 V96"></path>
-			<path d="M226 116 H236"></path>
-			<path d="M276 116 H286"></path>
-			<path d="M240 96 L248 104"></path>
-			<path d="M272 96 L264 104"></path>
+			<path d="M320 240 H448"></path>
+			<path d="M320 264 H448"></path>
+			<path d="M320 288 H448"></path>
 		</g>
-	</g>
 
-	<!-- Status lights -->
-	<g filter="url(#softGlow)" opacity="0.8">
-		<circle cx="182" cy="430" r="5" fill="#22D8FF"></circle>
-		<circle cx="330" cy="430" r="5" fill="#22D8FF"></circle>
-		<circle cx="256" cy="406" r="6" fill="#22D8FF" opacity="0.5"></circle>
+		<!-- Structural struts -->
+		<rect x="208" y="224" width="32" height="64" rx="10" fill="#2A3547"></rect>
+		<rect x="272" y="224" width="32" height="64" rx="10" fill="#2A3547"></rect>
+
+		<!-- Stabiliser thruster pods -->
+		<rect x="208" y="32" width="96" height="40" rx="18" fill="#120A1F"></rect>
+		<rect x="208" y="440" width="96" height="40" rx="18" fill="#120A1F"></rect>
+
+		<circle cx="232" cy="52" r="8" fill="#2EEBFF" opacity="0.6"></circle>
+		<circle cx="280" cy="52" r="8" fill="#2EEBFF" opacity="0.6"></circle>
+
+		<circle cx="232" cy="460" r="8" fill="#2EEBFF" opacity="0.6"></circle>
+		<circle cx="280" cy="460" r="8" fill="#2EEBFF" opacity="0.6"></circle>
 	</g>
 </svg>

@@ -10,6 +10,7 @@ radius = 500.0
 script = ExtResource("1_vedim")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_stebd")
 
 [node name="Area2D" type="Area2D" parent="."]
