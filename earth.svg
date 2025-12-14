@@ -1,0 +1,112 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Earth with Australia visible">
+	<defs>
+		<!-- Ocean gradient -->
+		<radialGradient id="ocean" cx="35%" cy="28%" r="78%">
+			<stop offset="0%" stop-color="#86E0FF"></stop>
+			<stop offset="50%" stop-color="#1D5BE0"></stop>
+			<stop offset="100%" stop-color="#08306B"></stop>
+		</radialGradient>
+
+		<!-- Atmosphere glow -->
+		<filter id="atmosphere" x="-30%" y="-30%" width="160%" height="160%">
+			<feGaussianBlur stdDeviation="12"></feGaussianBlur>
+		</filter>
+
+		<!-- Soft cloud blur -->
+		<filter id="cloudBlur" x="-20%" y="-20%" width="140%" height="140%">
+			<feGaussianBlur stdDeviation="2.5"></feGaussianBlur>
+		</filter>
+
+		<!-- Clip everything to the planet disc -->
+		<clipPath id="planetClip">
+			<circle cx="256" cy="256" r="150"></circle>
+		</clipPath>
+	</defs>
+
+	<!-- Atmosphere -->
+	<circle cx="256" cy="256" r="170" fill="#9ED7FF" opacity="0.22" filter="url(#atmosphere)"></circle>
+
+	<!-- Earth disc -->
+	<circle cx="256" cy="256" r="150" fill="url(#ocean)"></circle>
+
+	<!-- Land, clouds, and shading clipped to the disc -->
+	<g clip-path="url(#planetClip)">
+
+		<!-- Subtle darker ocean texture -->
+		<path d="M90 240 C140 210, 210 210, 250 235 C300 270, 360 260, 420 230 C470 210, 520 230, 540 255
+		         L540 540 L0 540 L0 275 C20 260, 55 260, 90 240 Z" fill="#062A5C" opacity="0.18"></path>
+
+		<!-- Eurasia / SE Asia blob (gives context for Australia) -->
+		<path d="
+			M250 150
+			C290 130, 350 145, 372 175
+			C390 200, 380 225, 360 235
+			C345 243, 338 255, 342 270
+			C347 290, 330 305, 310 300
+			C290 295, 278 282, 270 268
+			C260 248, 250 240, 230 238
+			C200 235, 180 215, 190 190
+			C200 165, 220 160, 250 150
+			Z" fill="#22C55E" opacity="0.95"></path>
+
+		<!-- Indonesia island chain (helps the eye connect Asia -> Australia) -->
+		<path d="M300 285 C315 275, 335 275, 350 286 C338 296, 320 302, 305 298 Z" fill="#22C55E" opacity="0.95"></path>
+		<path d="M355 292 C370 286, 392 292, 402 302 C388 310, 370 312, 358 305 Z" fill="#22C55E" opacity="0.95"></path>
+
+		<!-- Australia (more recognisable outline, fully inside disc) -->
+		<path d="
+			M262 304
+			C286 288, 320 288, 342 306
+			C360 321, 365 343, 354 363
+			C343 384, 319 396, 292 396
+			C266 396, 242 384, 231 363
+			C219 341, 229 318, 247 309
+			C252 306, 257 305, 262 304
+			Z" fill="#22C55E" opacity="0.98"></path>
+
+		<!-- Gulf of Carpentaria bite + Cape York hint (adds recognisability) -->
+		<path d="
+			M332 305
+			C332 292, 350 286, 360 292
+			C350 300, 346 312, 338 318
+			C334 314, 332 310, 332 305
+			Z" fill="#1FAE52" opacity="0.95"></path>
+
+		<!-- Tasmania -->
+		<ellipse cx="295" cy="414" rx="12" ry="9" fill="#22C55E" opacity="0.98"></ellipse>
+
+		<!-- Africa-ish land on left side to make it feel like "Earth", not just AU -->
+		<path d="
+			M130 180
+			C160 160, 205 165, 220 195
+			C232 220, 218 245, 192 258
+			C175 266, 170 280, 176 300
+			C186 332, 160 358, 132 350
+			C108 343, 95 318, 98 292
+			C101 268, 86 252, 78 235
+			C65 210, 90 190, 130 180
+			Z" fill="#22C55E" opacity="0.92"></path>
+
+		<!-- Polar ice (south) -->
+		<ellipse cx="256" cy="405" rx="95" ry="30" fill="#E6F6FF" opacity="0.55"></ellipse>
+
+		<!-- Cloud bands (subtle) -->
+		<g fill="#FFFFFF" opacity="0.18" filter="url(#cloudBlur)">
+			<path d="M40 210 C110 180, 190 185, 250 215 C315 250, 385 250, 470 215 C520 195, 560 205, 580 220
+			         L580 250 C540 235, 520 235, 470 255 C385 290, 300 290, 250 255 C190 225, 110 220, 40 245 Z"></path>
+			<path d="M-20 300 C60 275, 150 280, 220 310 C290 342, 370 340, 450 310 C520 284, 560 290, 590 305
+			         L590 330 C560 320, 520 318, 450 340 C370 372, 290 372, 220 340 C150 310, 60 308, -20 332 Z"></path>
+		</g>
+
+		<!-- Subtle terminator shadow on right edge -->
+		<path d="M340 110 C420 150, 460 235, 440 330 C420 420, 345 470, 260 468
+		         C360 440, 410 350, 400 270 C392 205, 370 145, 340 110 Z" fill="#000000" opacity="0.12"></path>
+	</g>
+
+	<!-- Specular highlight -->
+	<circle cx="205" cy="200" r="55" fill="#FFFFFF" opacity="0.10"></circle>
+
+	<!-- Thin outline (helps readability on black space) -->
+	<circle cx="256" cy="256" r="150" fill="none" stroke="#9ED7FF" stroke-width="3" opacity="0.35"></circle>
+</svg>

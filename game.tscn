@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkdks0sa57g1s"]
+[gd_scene load_steps=9 format=3 uid="uid://dkdks0sa57g1s"]
 
 [ext_resource type="PackedScene" uid="uid://bpq2pr4a0pw27" path="res://enemy.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://b5a8vffmkwpom" path="res://path_follow_2d.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://c3p23falr6iqt" path="res://game.gd" id="1_feb5d"]
 [ext_resource type="PackedScene" uid="uid://bqlgoi3aa4bnx" path="res://enemy_follower.tscn" id="3_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://cosm46b0e8n3t" path="res://tower.tscn" id="5_7jktm"]
+[ext_resource type="Texture2D" uid="uid://c8gnema21kuan" path="res://sun.svg" id="6_ryrav"]
+[ext_resource type="Texture2D" uid="uid://cdypptr41vg78" path="res://earth.svg" id="7_eow3j"]
 
 [sub_resource type="Curve2D" id="Curve2D_e2o6t"]
 _data = {
@@ -24,8 +26,10 @@ zoom = Vector2(0.3, 0.3)
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -1
+visible = false
 
 [node name="BackgroundUI" type="Control" parent="BackgroundLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,6 +39,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Starfield" type="ColorRect" parent="BackgroundLayer/BackgroundUI"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -57,3 +62,14 @@ script = ExtResource("1_e2o6t")
 
 [node name="Enemy" parent="Path2D/PathFollow2D" instance=ExtResource("1_80nbo")]
 max_hp = 10
+
+[node name="SolarSystem" type="Node2D" parent="."]
+
+[node name="Sun" type="Sprite2D" parent="SolarSystem"]
+position = Vector2(2143, 180)
+scale = Vector2(3, 3)
+texture = ExtResource("6_ryrav")
+
+[node name="Earth" type="Sprite2D" parent="SolarSystem"]
+position = Vector2(3700, 955)
+texture = ExtResource("7_eow3j")
