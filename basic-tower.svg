@@ -1,21 +1,98 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg fill="#000000" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-	 viewBox="0 0 512.002 512.002" xml:space="preserve">
-<g>
-	<g>
-		<path d="M414.431,488.2l-14.497-373.03H112.07L97.573,488.2c-0.243,6.226,2.062,12.282,6.381,16.772
-			c4.319,4.491,10.281,7.029,16.513,7.029h67.928V356.881c0-37.278,30.328-67.606,67.607-67.606
-			c37.279,0,67.607,30.328,67.607,67.606v155.121h67.928c6.23,0,12.192-2.539,16.513-7.029
-			C412.371,500.482,414.674,494.426,414.431,488.2z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Basic sci-fi single-target tower (top-fire)">
+	<defs>
+		<linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0" stop-color="#EAF1FB"></stop>
+			<stop offset="0.55" stop-color="#B9C6D8"></stop>
+			<stop offset="1" stop-color="#7F8EA5"></stop>
+		</linearGradient>
+
+		<linearGradient id="dark" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0" stop-color="#2F3948"></stop>
+			<stop offset="1" stop-color="#141A23"></stop>
+		</linearGradient>
+
+		<radialGradient id="glow" cx="50%" cy="50%" r="60%">
+			<stop offset="0" stop-color="#A7FBFF" stop-opacity="0.9"></stop>
+			<stop offset="0.45" stop-color="#22D8FF" stop-opacity="0.6"></stop>
+			<stop offset="1" stop-color="#0B2B3A" stop-opacity="0"></stop>
+		</radialGradient>
+
+		<filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+			<feGaussianBlur stdDeviation="3"></feGaussianBlur>
+		</filter>
+
+		<filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+			<feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity="0.35"></feDropShadow>
+		</filter>
+	</defs>
+
+	<!-- Ground shadow -->
+	<ellipse cx="256" cy="456" rx="176" ry="28" fill="#0A0F16" opacity="0.55"></ellipse>
+
+	<!-- Base -->
+	<g filter="url(#shadow)">
+		<path d="M96 404
+		         C132 372, 192 354, 256 354
+		         C320 354, 380 372, 416 404
+		         L416 440
+		         C380 468, 320 484, 256 484
+		         C192 484, 132 468, 96 440 Z" fill="url(#dark)"></path>
+		<path d="M124 410
+		         C156 388, 206 374, 256 374
+		         C306 374, 356 388, 388 410
+		         L388 426
+		         C356 448, 306 460, 256 460
+		         C206 460, 156 448, 124 426 Z" fill="url(#body)" opacity="0.92"></path>
 	</g>
-</g>
-<g>
-	<g>
-		<path d="M404.98,0c-12.653,0-22.911,10.258-22.911,22.911v28.277H278.912V22.911C278.912,10.258,268.654,0,256.001,0
-			S233.09,10.258,233.09,22.911v28.277H129.933V22.911C129.933,10.258,119.675,0,107.022,0S84.111,10.258,84.111,22.911v51.188
-			c0,10.373,6.899,19.126,16.355,21.947c2.079,0.62,4.277,0.964,6.556,0.964H404.98c2.28,0,4.478-0.344,6.556-0.964
-			c9.456-2.821,16.355-11.573,16.355-21.947V22.911C427.891,10.258,417.633,0,404.98,0z"/>
+
+	<!-- Main column -->
+	<g filter="url(#shadow)">
+		<path d="M206 370
+		         C214 324, 220 278, 224 230
+		         C226 200, 242 182, 256 182
+		         C270 182, 286 200, 288 230
+		         C292 278, 298 324, 306 370
+		         C310 392, 292 408, 256 408
+		         C220 408, 202 392, 206 370 Z" fill="url(#body)"></path>
+
+		<!-- Energy spine -->
+		<rect x="248" y="240" width="16" height="124" rx="8" fill="#0A121B"></rect>
+		<rect x="250" y="246" width="12" height="112" rx="6" fill="#22D8FF" opacity="0.6" filter="url(#softGlow)"></rect>
 	</g>
-</g>
+
+	<!-- Core chamber -->
+	<g filter="url(#shadow)">
+		<path d="M256 94 L332 140 L332 220 L256 266 L180 220 L180 140 Z" fill="url(#dark)"></path>
+		<path d="M256 108 L320 144 L320 216 L256 252 L192 216 L192 144 Z" fill="url(#body)" opacity="0.94"></path>
+
+		<circle cx="256" cy="180" r="64" fill="url(#glow)" filter="url(#softGlow)"></circle>
+		<circle cx="256" cy="180" r="42" fill="#0A151F" opacity="0.9"></circle>
+	</g>
+
+	<!-- Top firing emitter -->
+	<g filter="url(#shadow)">
+		<!-- Emitter housing -->
+		<circle cx="256" cy="116" r="42" fill="url(#body)"></circle>
+		<circle cx="256" cy="116" r="30" fill="#243042"></circle>
+
+		<!-- Firing aperture -->
+		<circle cx="256" cy="116" r="12" fill="#061018"></circle>
+		<circle cx="256" cy="116" r="7" fill="#22D8FF" opacity="0.35" filter="url(#softGlow)"></circle>
+
+		<!-- Subtle top markings -->
+		<g stroke="#6C7B94" stroke-width="4" stroke-linecap="round" opacity="0.6">
+			<path d="M256 86 V96"></path>
+			<path d="M226 116 H236"></path>
+			<path d="M276 116 H286"></path>
+			<path d="M240 96 L248 104"></path>
+			<path d="M272 96 L264 104"></path>
+		</g>
+	</g>
+
+	<!-- Status lights -->
+	<g filter="url(#softGlow)" opacity="0.8">
+		<circle cx="182" cy="430" r="5" fill="#22D8FF"></circle>
+		<circle cx="330" cy="430" r="5" fill="#22D8FF"></circle>
+		<circle cx="256" cy="406" r="6" fill="#22D8FF" opacity="0.5"></circle>
+	</g>
 </svg>

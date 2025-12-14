@@ -17,8 +17,6 @@ func _process(delta):
 	if target == null:
 		return
 
-	queue_redraw();
-
 	target.take_damage(damage)
 	_cooldown = fire_rate
 
